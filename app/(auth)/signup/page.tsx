@@ -1,6 +1,7 @@
 import InputField from "@/components/UI/InputField"
 import {signupInputFields} from "@/constants"
 import Link from "next/link"
+import Button from "../(components)/Button"
 
 const page = () => {
     return (
@@ -17,9 +18,7 @@ const page = () => {
                     placeholder={placeholder}
                     minLength={minLength}/>))}
                 <p className="text-white text-sm">Already have an account? <Link href={"/signin"} className="text-[17px] ml-2">Sign In</Link></p>
-                <div className="flex justify-end">
-                    <button className="p-1.5 px-3 border rounded-md bg-white/20 text-white">Signup</button>
-                </div>
+                <Button label={"Signup"} />
             </div>
         </section>
     )

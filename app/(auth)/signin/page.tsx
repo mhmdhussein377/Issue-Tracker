@@ -2,6 +2,7 @@
 import InputField from '@/components/UI/InputField';
 import {signinInputFields} from "@/constants/index"
 import Link from 'next/link';
+import Button from '../(components)/Button';
 
 const page = () => {
 
@@ -19,9 +20,7 @@ const page = () => {
                     placeholder={placeholder}
                     minLength={minLength}/>))}
                 <p className='text-sm'>Don't have an account? <Link href={"/signup"} className='ml-1 text-[17px]'>Signup</Link></p>
-                <div className="flex justify-end">
-                    <button className="p-1.5 px-3 border rounded-md bg-white/20 text-white">Signup</button>
-                </div>
+                <Button label={"Signin"} />
             </form>
         </section>
     )
