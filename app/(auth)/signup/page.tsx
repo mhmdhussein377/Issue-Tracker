@@ -1,3 +1,7 @@
+import InputField from "@/components/UI/InputField"
+import {signupInputFields} from "@/constants"
+import Link from "next/link"
+
 const page = () => {
     return (
         <section
@@ -5,36 +9,14 @@ const page = () => {
             <div
                 className="min-w-[400px] rounded-md p-4 flex flex-col gap-4 bg-[#18191b] border text-[#edeef0]">
                 <h2 className="text-2xl">Signup</h2>
-                <div className="flex flex-col gap-2">
-                    <label htmlFor="name" className="text-gray-100">Name</label>
-                    <input
-                        id="name"
-                        type="text"
-                        name="name"
-                        placeholder="Pedro Duarte"
-                        className="bg-[#111113] border p-1.5 rounded-md w-full"/>
-                </div>
-                <div className="flex flex-col gap-2">
-                    <label htmlFor="name" className="text-gray-100">Email</label><input
-                        type="email"
-                        name="email"
-                        placeholder="PedroDuarte@gmail.com"
-                        className="bg-[#111113] border p-1.5 rounded-md w-full"/></div>
-                <div className="flex flex-col gap-2">
-                <label htmlFor="name" className="text-gray-100">Username</label>
-                <input
-                    type="text"
-                    name="username"
-                    placeholder="@peduarte"
-                    className="bg-[#111113] border p-1.5 rounded-md w-full"/></div>
-                <div className="flex flex-col gap-2">
-                <label htmlFor="name" className="text-gray-100">Password</label>
-                <input
-                    type="password"
-                    name="password"
-                    placeholder="ped123ro"
-                    minLength={8}
-                    className="bg-[#111113] border p-1.5 rounded-md w-full"/></div>
+                {signupInputFields.map(({label, type, name, placeholder, minLength}, index) => (<InputField
+                    key={index}
+                    label={label}
+                    type={type}
+                    name={name}
+                    placeholder={placeholder}
+                    minLength={minLength}/>))}
+                <p className="text-white text-sm">Already have an account? <Link href={"/signin"} className="text-[17px] ml-2">Sign In</Link></p>
                 <div className="flex justify-end">
                     <button className="p-1.5 px-3 border rounded-md bg-white/20 text-white">Signup</button>
                 </div>
