@@ -13,6 +13,8 @@ export default function RootLayout({children} : {
     children: React.ReactNode
 }) {
     return (
-        {children}
+        <section className="flex items-center justify-center min-h-screen bg-[#111113] w-full p-4">
+            {children}
+        </section>
     )
 }
